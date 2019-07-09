@@ -43,46 +43,48 @@ convertToString(21); // "21"
  * @return {number}
  */
 
+let increment = n => ++n;
+
 /**
  * Subtracts one from a given number.
  * @param {number} n
  * @return {number}
  */
-
+let decrement = n => --n;
 /**
  * Adds two numbers.
  * @param {number} x
  * @param {number} y
  * @return {number} the sum
  */
-
+let add = (a, b) => a + b;
 /**
  * Subtracts the second number from the first.
  * @param {number} x
  * @param {number} y
  * @return {number} the difference
  */
-
+let sub = (a, b) => a - b;
 /**
  * Multiplies two numbers.
  * @param {number} x
  * @param {number} y
  * @return {number} the product
  */
-
+let mul = (a, b) => a*b;
 /**
  * Divides the first number by the second.
  * @param {number} x
  * @param {number} y
  * @return {number} the quotient
  */
-
+let div = (a, b) => a/b;
 /**
  * Multiplies a number by itself.
  * @param {number} x, number to be squared
  * @return {number} squared
  */
-
+let squared = n => n*n;
 /**
  * Performs a mathematical operation on two numbers.
  * Also prints out the equation: (i.e.) "1 + 5 = 6" or "8 / 2 = 4".
@@ -91,7 +93,22 @@ convertToString(21); // "21"
  * @param {number} y
  * @return {number} the result
  */
-
+let operation = (operation, x, y) => {
+	switch (operation) {
+		case "add":
+			console.log(`${x} + ${y} = ${x + y}`);
+			break;
+		case "subtract":
+			console.log(`${x} - ${y} = ${x - y}`);
+			break;
+		case "multiply":
+			console.log(`${x} * ${y} = ${x * y}`);
+			break;
+		case "divide":
+			console.log(`${x} / ${y} = ${x / y}`);
+			break;
+	}				
+}
 /**
  * Returns true if `a` is greater than `b`.
  * @param {number} a
@@ -99,46 +116,48 @@ convertToString(21); // "21"
  * @return {boolean} `a` is larger than `b`
  */
 
+let max = (a, b) => (a > b) ? true : false;
+
 /**
  * Returns true if `a` is less than `b`.
  * @param {number} a
  * @param {number} b
  * @return {boolean} `a` is smaller than `b`
  */
-
+let min = (a, b) => (a < b) ? true : false;
 /**
  * Returns true if `a` and `b` are equal.
  * @param {number} a
  * @param {number} b
  * @return {boolean} the numbers are equal
  */
-
+let equal = (a, b) => (a === b);
 /**
  * Returns the smallest value of two numbers.
  * @param {number} x
  * @param {number} y
  * @return {number} the smallest number
  */
-
+let smaller = (a, b) => (a < b) ? a : b;
 /**
  * Returns the largest value of two numbers.
  * @param {number} x
  * @param {number} y
  * @return {number} the largest number
  */
-
+let larger = (a, b) => (a > b) ? a : b;
 /**
  * Returns true if `n` is even.
  * @param {number} n
  * @return {boolean} the number is even
  */
-
+let isEven = (a) => (!(a & 1));
 /**
  * Returns true if `n` is odd.
  * @param {number} n
  * @return {boolean} the number is odd
  */
-
+let isOdd = (a) => (a & 1);
 /**
  * Returns a letter grade.
  * "A": 90-100%
@@ -150,10 +169,24 @@ convertToString(21); // "21"
  * @param {number} total maximum possible score
  * @return {string} the score represented as a letter grade
  */
-
+let grade = (score) => {
+	switch (true) {
+		case score >= 90:
+			return 'A';
+		case score >= 80:
+			return 'B';
+		case score >= 70:
+			return 'C';
+		case score >= 60:
+			return 'D';
+		default:
+			return 'F';				
+	}
+}
 /**
  * Joins two strings with a space.
  * @param {string} word1
  * @param {string} word2
  * @return {string} joined the words joined with a space
  */
+let join = (word1, word2) => (word1 + ' ' + word2);
